@@ -1,7 +1,12 @@
+@font-face {
+  font-family: 'Open-Sans';
+  src:url('/fonts/OpenSans-Regular.ttf')
+}
+
 body {
-  font-family: arial;
-  font-size: 15px;
-  background: #f4f4f4;
+  font-family: 'Open-Sans';
+  font-size: 16px;
+  background: #404137;
   color: #666;
 }
 .logo {
@@ -71,6 +76,7 @@ a.more {
   color: #fff;
   padding : 10px;
   margin-top: 20px;
+  font-size: 14px;
 }
 .post {
   border-bottom: 1px solid #ccc;
@@ -168,4 +174,38 @@ footer{
   padding: 15px;
   border: 1px transparent red;
   margin-top: 5px;
+}
+
+@media all and (max-width:320px) {
+  nav{
+    background: #404137;
+    color: grey;
+
+    padding: 20px 0 0 10px;
+    font-size: 18px;
+  }
+  .container nav ul{
+    display: flex;
+    flex-direction: column;
+  }
+  .container nav ul li{
+    flex-grow: 1;
+    margin-bottom: 5px;
+    text-align: center;
+  }
+  nav a:hover{
+    color:white;
+    background: transparent;
+  }
+
+  #ontopOfImage{
+    position: absolute;
+    top:120px;
+    background: white;
+    opacity: 0.7;
+    text-align: center;
+    width: 100%;
+    font-size: 220%;
+    border: 2px transparent black;
+  }
 }
