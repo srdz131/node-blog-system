@@ -80,7 +80,6 @@ router.post('/add',upload.any(),function(req,res,next){
   }//from nested else
     }).catch((e)=>{
       console.log(e)
-      return throw e;
     })
 
 }//from else
