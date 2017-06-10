@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var mongo = require('mongodb');
-
+//var db = require('monk')('localhost/nodeblog')
 //setup for process.env variables
 //if there are no process.env variables on server setup(i.e you are running localy) for username and password
 //import it from local env.js file

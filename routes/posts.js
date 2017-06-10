@@ -3,14 +3,14 @@ var router = express.Router();
 var mongo = require('mongodb');
 //var db = require('monk')('localhost/nodeblog')
 
-//setup for process.env variables
-//if there are no process.env variables on server setup(i.e you are running localy) for username and password
-//import it from local env.js file 
+// //setup for process.env variables
+// //if there are no process.env variables on server setup(i.e you are running localy) for username and password
+// //import it from local env.js file
 if(!process.env.MONGOLAB_USERNAME){
   var env = require('../env.js');
 }
 var db = require('monk')(`mongodb://${process.env.MONGOLAB_USERNAME}:${process.env.MONGOLAB_PASSWORD}@ds019916.mlab.com:19916/nodeblog`)
-//
+// //
 
 var flash = require('connect-flash');
 var crypto = require('crypto');
