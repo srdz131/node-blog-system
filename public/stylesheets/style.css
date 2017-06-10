@@ -6,7 +6,10 @@
 body {
   font-family: 'Open-Sans';
   font-size: 16px;
-  background: #404137;
+  background-image: url('/images/write.jpeg');
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-attachment: fixed;
   color: #666;
 }
 .logo {
@@ -14,7 +17,7 @@ body {
   margin: auto;
   display: block;
   width: 100%;
-  overflow: hidden;
+
 }
 .container {
   background: white;
@@ -23,6 +26,7 @@ body {
   margin: 20px auto;
   padding: 20px;
   border-top: #83cd39 13px solid;
+
 }
 .clr {
   clear:both;
@@ -165,6 +169,8 @@ ul.success li {
 }
 footer{
   text-align: center;
+  background: #404137;
+  color:white;
 }
 .errors li {
   background-color: #FF5D5D;
@@ -177,12 +183,32 @@ footer{
 }
 
 @media all and (max-width:320px) {
+  body{
+    padding: 0px;
+    margin: 0px;
+  }
+  .container {
+    background: white;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+  }
+  .clr {
+    clear:both;
+  }
+  .logo {
+    text-align: center;
+    margin: auto;
+    display: block;
+    width: 100%;
+    height: 200px;
+  }
   nav{
     background: #404137;
     color: grey;
-
     padding: 20px 0 0 10px;
     font-size: 18px;
+    height: 100px;
   }
   .container nav ul{
     display: flex;
@@ -190,7 +216,7 @@ footer{
   }
   .container nav ul li{
     flex-grow: 1;
-    margin-bottom: 5px;
+    margin-bottom: 7px;
     text-align: center;
   }
   nav a:hover{
@@ -207,5 +233,10 @@ footer{
     width: 100%;
     font-size: 220%;
     border: 2px transparent black;
+  }
+  footer{
+    text-align: center;
+    background: #404137;
+    color:white;
   }
 }
