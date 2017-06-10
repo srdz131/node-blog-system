@@ -1,0 +1,23 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    title Blog
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    .container
+      img.logo(src = '/images/blog-banner.jpg' id='banner')
+      nav
+        ul
+          li
+            a(href='/') Home
+          li
+            a(href='/posts/add') Add Post
+          li
+            a(href='/categories/add') Add Category
+      != messages()
+      block content
+      footer
+        p Blog &copy; 2017 Created by Srdjan Hrvacanin
+  script(src='/javascripts/libs/jquery-3.2.1.min.js')
+  script(src='/javascripts/index.js')

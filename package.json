@@ -1,0 +1,32 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "engines":{
+    "node":"7.8.0"
+  },
+  "author":"Srdjan Hrvacanin",
+  "description":"Blog app built with nodejs",
+  "dependencies": {
+    "body-parser": "~1.17.1",
+    "connect-flash": "*",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.3",
+    "express": "~4.15.2",
+    "express-messages": "*",
+    "express-session": "*",
+    "express-validator": "*",
+    "jade": "~1.11.0",
+    "mime": "^1.3.6",
+    "moment": "*",
+    "mongodb": "*",
+    "monk": "*",
+    "morgan": "~1.8.1",
+    "multer": "*",
+    "serve-favicon": "~2.4.2"
+  },
+  "license": "ISC"
+}
