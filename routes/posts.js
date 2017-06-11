@@ -6,11 +6,13 @@ var mongo = require('mongodb');
 // //setup for process.env variables
 // //if there are no process.env variables on server setup(i.e you are running localy) for username and password
 // //import it from local env.js file
+
 if(!process.env.MONGOLAB_USERNAME){
-  var env = require('../env.js');
+  var env = require('./env.js');
 }
 var db = require('monk')(`mongodb://${process.env.MONGOLAB_USERNAME}:${process.env.MONGOLAB_PASSWORD}@ds019916.mlab.com:19916/nodeblog`)
-// //
+
+///////////////////////////////////
 
 var flash = require('connect-flash');
 var crypto = require('crypto');
@@ -18,15 +20,14 @@ var mime = require('mime');
 
 //multer stuff
 var multer = require('multer');
-var storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, './public/images/uploads/')
-  },
+var storage = require('multer-gridfs-storage')({
+  url: `mongodb://${process.env.MONGOLAB_USERNAME}:${process.env.MONGOLAB_PASSWORD}@ds019916.mlab.com:19916/nodeblog`,
   filename: function (req, file, cb) {
-    crypto.pseudoRandomBytes(16, function (err, raw) {
-      cb(null, raw.toString('hex') + Date.now() + '.' + mime.extension(file.mimetype));
-
-})}});
+       crypto.pseudoRandomBytes(16, function (err, raw) {
+        cb(null, raw.toString('hex') + Date.now() + '.' + mime.extension(file.mimetype));
+  })},
+  root:'images'
+})
 
 var upload = multer({ storage: storage })
 

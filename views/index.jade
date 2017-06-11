@@ -9,7 +9,7 @@ block content
         p.meta Posted in
           a(href='categories/show/#{post.category}')  #{post.category} by #{post.author} on #{moment(post.date).format("DD-MM-YYYY kk:mm")}
         div.imageContent
-          img(src='/images/uploads/#{post.mainimage}')
+          img(src='/images/#{post.mainimage}')
           h2(id='ontopOfImage')=post.title
         !=truncateText(post.body,400)
         a.more(href = '/posts/show/#{post._id}') Read More

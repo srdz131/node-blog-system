@@ -17,7 +17,7 @@ var mime = require('mime');
 // if there are no process.env variables on server setup(i.e you are running localy) for username and password
 // import it from local env.js file
  if(!process.env.MONGOLAB_USERNAME){
-   var env = require('../env.js');
+   var env = require('./env.js');
  }
 var db = require('monk')(`mongodb://${process.env.MONGOLAB_USERNAME}:${process.env.MONGOLAB_PASSWORD}@ds019916.mlab.com:19916/nodeblog`)
 // //
@@ -26,6 +26,7 @@ var db = require('monk')(`mongodb://${process.env.MONGOLAB_USERNAME}:${process.e
 var index = require('./routes/index');
 var posts = require('./routes/posts');
 var categories = require('./routes/categories');
+var images = require('./routes/images');
 
 
 var app = express();
@@ -94,6 +95,7 @@ app.use(function(req,res,next){
 app.use('/', index);
 app.use('/posts', posts);
 app.use('/categories', categories);
+app.use('/images', images);
 
 
 // catch 404 and forward to error handler
